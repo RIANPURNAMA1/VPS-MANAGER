@@ -1,0 +1,61 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --bg: #ffffff;
+  --sidebar: #f5f5f5;
+  --card: #ffffff;
+  --hover: #ebebeb;
+  --line: #e5e5e5;
+  --fg: #111111;
+  --fg2: #666666;
+  --fg3: #888888;
+  --btn: #111111;
+  --btn-fg: #ffffff;
+}
+.dark {
+  --bg: #111111;
+  --sidebar: #1a1a1a;
+  --card: #1a1a1a;
+  --hover: #2a2a2a;
+  --line: #333333;
+  --fg: #ffffff;
+  --fg2: #aaaaaa;
+  --fg3: #8a8a8a;
+  --btn: #ffffff;
+  --btn-fg: #111111;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-sidebar: var(--sidebar);
+  --color-card: var(--card);
+  --color-hover: var(--hover);
+  --color-line: var(--line);
+  --color-fg: var(--fg);
+  --color-fg2: var(--fg2);
+  --color-fg3: var(--fg3);
+  --color-btn: var(--btn);
+  --color-btnfg: var(--btn-fg);
+  --font-sans: "Segoe UI Variable Text", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "Cascadia Mono", Consolas, "SF Mono", ui-monospace, Menlo, monospace;
+  --radius-md: 6px;
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+::selection { background: var(--fg); color: var(--bg); }
+* { scrollbar-width: thin; scrollbar-color: var(--line) transparent; }
+
+/* Terminal: selalu hitam-putih, terlepas dari tema */
+.xterm { padding: 8px; }
+@media (prefers-reduced-motion: reduce) { * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; } }
